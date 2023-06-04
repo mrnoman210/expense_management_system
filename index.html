@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Budget</title>
+    <link rel="stylesheet" href="./css_files/home.css" />
+    <script defer src="./javascript_files/manage_data.js"></script>
+  </head>
+  <body>
+    <h1 class="display_screen">
+      Total budget: <span id="display_budget">$00</span>
+    </h1>
+    <div class="top_area">
+      <h1>Enter budget</h1>
+      <input
+        type="number"
+        pattern="[0-9]+"
+        id="addBudget"
+        autofocus
+        placeholder="Enter Budget"
+      />
+      <button onclick="addBudget()">Set Budget</button>
+    </div>
+    <!-- user input section -->
+    <section id="input_expense">
+      <!-- categories -->
+      <select name="catagory" id="category">
+        <option value="Resturent & Cafe">Resturent & Cafe</option>
+        <option value="Clothes & Shopping">Clothes & Shopping</option>
+        <option value="Credit & Loans">Credit & Loans</option>
+        <option value="Gift Cards">Gift Cards</option>
+        <option value="Study & Courses">Study & Courses</option>
+      </select>
+      <!-- Details -->
+      <input type="text" id="details" placeholder="Details" />
+      <!-- amount -->
+      <input type="number" id="amount" placeholder="Amount" />
+      <!-- date -->
+      <input type="date" id="date" />
+      <!-- add button -->
+      <input type="button" onclick="addExpense()" value="Add" />
+    </section>
+
+    <!-- display section -->
+    <section id="display_expense">
+        <div class="headings">
+            <h1>Catagory</h1>
+            <h1>Details</h1>
+            <h1>Amount</h1>
+            <h1>Date</h1>
+            <h1></h1>
+        </div>
+        <!-- table data inserted here -->
+        <div id="data_id">
+    </div>
+    </section>
+    <table class="Remaaining_balance">
+        <tr>
+            <th>Remaining Amount</th>
+            <th>Expense Amount</th>
+        </tr>
+        <tr>
+            <td>$ <span id="remaining_balance">0</span></td>
+            <td>$ <span id="expense_balance">0</span></td>
+        </tr>
+    </table>
+    <!-- error area -->
+    <div style="position: sticky; width: 100%; bottom: 0 !important;">
+    <div class="error" id="error_ID">
+        <h1 id="error_message">please enter data</h1>
+    </div>
+</div>
+  </body>
+</html>
